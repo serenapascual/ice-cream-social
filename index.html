@@ -6,8 +6,7 @@
     <title>ice cream social</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=Open+Sans&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,800|Open+Sans:300,800&display=swap">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
@@ -32,7 +31,7 @@
       <p class="section__subtitle section__subtitle--landing">
         connecting local creameries with hospitals to serve patients in chemotherapy
       </p>
-      <img src="res/truck.png" alt="truck filler">
+      <img src="res/truck.png" alt="truck filler" class="landing__img">
     </section>
 
     <!-- Overview -->
@@ -62,13 +61,13 @@
       <h2 class="section__title section__title--faq">faq</h2>
       <h3>how can i help?</h3>
       <p>this project is currently in development. feel free to reach out.</p>
-      <p>we are looking for:</p>
+      <p><strong>we are looking for:</strong></p>
       <ul>
         <li>donors to fund project development</li>
         <li>devs to improve site</li>
         <li>legal counsel for establishing non-profit status</li>
       </ul>
-      <p>we want to interview:</p>
+      <p><strong>we want to interview:</strong></p>
       <ul>
         <li>ice cream shop owners</li>
         <li>hospital administrators</li>
@@ -92,20 +91,19 @@
         please contact us using the form below, or by emailing me@harrisonlin.com.
       </p>
       <form class="gform"
-        method="POST"
-        data-email="sender@example.net"
+        method="POST" 
         action="https://script.google.com/macros/s/AKfycbzEzOaAeA4-mpw4St9GqtHbUg3adlzgKUcU_H1E2F9OiS9FUY8/exec">
         <fieldset class="pure-group">
           <label for="name">name: </label>
-          <input id="name" name="name" placeholder="ben" />
+          <input id="name" name="name" placeholder="" />
         </fieldset>
         <fieldset class="pure-group">
           <label for="email">email address: </label>
-          <input id="email" name="email" type="email" value="" required placeholder="you@email.com" />
+          <input id="email" name="email" type="email" value="" required placeholder="" />
         </fieldset>
         <fieldset class="pure-group">
           <label for="message">message: </label>
-          <textarea id="message" name="message" rows="10" placeholder="say hi!" /></textarea>
+          <textarea id="message" name="message" rows="10" placeholder="" /></textarea>
         </fieldset>
         <fieldset class="pure-group honeypot-field">
           <label for="honeypot">hidden text field to avoid spam; must be empty else we assume bot</label>
@@ -122,12 +120,24 @@
       </form>
 
       <!-- Submit form to Google using AJAX -->
-      <script data-cfasync="false" src="form-submission-handler.js"></script>
+      <script data-cfasync="false" src="js/form-submission-handler.js"></script>
       </section>
 
     <!-- Footer -->
     <footer>
-
+      &#169; 2020 ice cream social. all rights reserved.
+      <ul class="social-media-list">
+        <li class="social-media-list__item">
+          <a class="social-media-list__link" href="">
+            twitter
+          </a>
+        </li>
+        <li class="social-media-list__item">
+          <a class="social-media-list__link" href="">
+            facebook
+          </a>
+        </li>
+      </ul>
     </footer>
   </body>
 </html>
