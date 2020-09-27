@@ -1,2 +1,2 @@
 # ice-cream-social
-Giving a go at redesigning the website of an emerging nonprofit.
+Giving a go at website redesign of an emerging nonprofit.
