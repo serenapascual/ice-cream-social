@@ -6,10 +6,14 @@
     <title>ice cream social</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,800|Open+Sans:300,800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,800|Open+Sans:300,400,800&display=swap">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" -->
+    <!-- integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" /> -->
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="oRx00cUG"></script>
     <!-- Header -->
     <header>
       <div class="logo">
@@ -94,16 +98,16 @@
         method="POST" 
         action="https://script.google.com/macros/s/AKfycbzEzOaAeA4-mpw4St9GqtHbUg3adlzgKUcU_H1E2F9OiS9FUY8/exec">
         <fieldset class="pure-group">
-          <label for="name">name: </label>
-          <input id="name" name="name" placeholder="" />
+          <!-- <label for="name">name: </label> -->
+          <input id="name" name="name" placeholder="name*" />
         </fieldset>
         <fieldset class="pure-group">
-          <label for="email">email address: </label>
-          <input id="email" name="email" type="email" value="" required placeholder="" />
+          <!-- <label for="email">email address: </label> -->
+          <input id="email" name="email" type="email" value="" required placeholder="email address*" />
         </fieldset>
         <fieldset class="pure-group">
-          <label for="message">message: </label>
-          <textarea id="message" name="message" rows="10" placeholder="" /></textarea>
+          <!-- <label for="message">message: </label> -->
+          <textarea id="message" name="message" rows="10" placeholder="message*" /></textarea>
         </fieldset>
         <fieldset class="pure-group honeypot-field">
           <label for="honeypot">hidden text field to avoid spam; must be empty else we assume bot</label>
@@ -111,7 +115,7 @@
         </fieldset>
         
         <button class="button-success pure-button button-xlarge">
-          <i class="fa fa-paper-plane"></i>&nbsp;send
+          send &rsaquo;
         </button>
         
         <div class="thankyou_message" style="display:none;">
@@ -125,17 +129,22 @@
 
     <!-- Footer -->
     <footer>
-      &#169; 2020 ice cream social. all rights reserved.
+      <div class="copyright">
+        &#169; 2020 ice cream social. all rights reserved.
+      </div>
       <ul class="social-media-list">
         <li class="social-media-list__item">
+          <!-- possibly link to social media page in future instead of a share button
           <a class="social-media-list__link" href="">
-            twitter
-          </a>
+            <i class="fab fa-facebook-square"></i>
+          </a> -->
+          <div class="fb-share-button" data-href="https://www.ice-cream-social.org/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ice-cream-social.org%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
         </li>
         <li class="social-media-list__item">
-          <a class="social-media-list__link" href="">
-            facebook
-          </a>
+          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="have you heard of ice cream social? 🍦" data-url="https://www.ice-cream-social.org/" data-dnt="true" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <!-- <a class="social-media-list__link" href="https://twitter.com/intent/tweet?text=have%20you%20heard%20about%20ice%20cream%20social%3f%20%F0%9F%8D%A6%20https://www.ice-cream-social.org/">
+            <i class="fab fa-twitter"></i> -->
+          <!-- </a> -->
         </li>
       </ul>
     </footer>
