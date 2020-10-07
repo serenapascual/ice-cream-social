@@ -6,10 +6,27 @@
     <title>ice cream social</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,800|Open+Sans:300,400,800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,800|Open+Sans:300,400,700&display=swap">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" -->
     <!-- integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" /> -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="res/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="res/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="res/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="res/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="res/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="res/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="res/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="res/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="res/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="res/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="res/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="res/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="res/favicon-16x16.png">
+    <link rel="manifest" href="res/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="res/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
   </head>
   <body>
     <div id="fb-root"></div>
@@ -17,9 +34,11 @@
     <!-- Header -->
     <header>
       <div class="logo">
+        <a href="#"><img src="res/logo.png"></a>
       </div>
       <nav class="nav">
         <ul class="nav__list">
+          <li class="nav__item"><a href="#" class="nav__link">home</a></li>
           <li class="nav__item"><a href="#overview" class="nav__link">overview</a></li>
           <li class="nav__item"><a href="#faq" class="nav__link">faq</a></li>
           <li class="nav__item"><a href="#contact" class="nav__link">contact</a></li>
@@ -48,13 +67,16 @@
       </p>
       <div class="benefits">
         <div class="benefit">
+          <h1>👄</h1><br>
           <h3>reduces mouth sores</h3>
           <p>a common chemo side effect</p>
         </div>
         <div class="benefit">
+          <h1>💪</h1><br>
           <h3>provides much-needed calories</h3> 
         </div>
         <div class="benefit">
+          <h1>🥺</h1><br>
           <h3>pure enjoyment</h3> 
         </div>
       </div>
@@ -94,33 +116,49 @@
       <p class="section__subtitle section__subtitle--contact">
         please contact us using the form below, or by emailing me@harrisonlin.com.
       </p>
-      <form class="gform"
-        method="POST" 
-        action="https://script.google.com/macros/s/AKfycbzEzOaAeA4-mpw4St9GqtHbUg3adlzgKUcU_H1E2F9OiS9FUY8/exec">
-        <fieldset class="pure-group">
-          <!-- <label for="name">name: </label> -->
-          <input id="name" name="name" placeholder="name*" />
+      <form name="contact" method="POST" data-netlify="true">
+        <fieldset>
+          <label>
+          <input id="name" name="name" type="text" required placeholder="name*" />
+          </label>
         </fieldset>
-        <fieldset class="pure-group">
-          <!-- <label for="email">email address: </label> -->
+        <fieldset>
+          <label>
           <input id="email" name="email" type="email" value="" required placeholder="email address*" />
+          </label>
         </fieldset>
-        <fieldset class="pure-group">
-          <!-- <label for="message">message: </label> -->
-          <textarea id="message" name="message" rows="10" placeholder="message*" /></textarea>
+        <fieldset>
+          <legend><strong>who are you?</strong></legend>
+          <label for="hospital">
+            <input id="hospital" name="role" type="checkbox" />
+            <span class="label">i work at a hospital</span>
+          </label>
+
+          <label for="creamery">
+            <input id="creamery" name="role" type="checkbox" />
+            <span>i work at a creamery</span>
+          </label>
+
+          <label for="other">
+            <input id="other" name="role" type="checkbox" />
+            <span>i want to help</span>
+          </label>
         </fieldset>
-        <fieldset class="pure-group honeypot-field">
+        <fieldset class="text">
+          <textarea id="message" name="message" rows="6" required placeholder="message*" /></textarea>
+        </fieldset>
+        <fieldset class="honeypot-field">
           <label for="honeypot">hidden text field to avoid spam; must be empty else we assume bot</label>
           <input id="honeypot" type="text" name="honeypot" value="" />
         </fieldset>
         
-        <button class="button-success pure-button button-xlarge">
+        <button type="submit">
           send &rsaquo;
         </button>
         
-        <div class="thankyou_message" style="display:none;">
+        <!-- <div class="thankyou_message" style="display:none;">
           <h2><em>thank you - your message has been sent!</em></h2>
-        </div>
+        </div> -->
       </form>
 
       <!-- Submit form to Google using AJAX -->

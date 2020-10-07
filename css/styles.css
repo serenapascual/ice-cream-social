@@ -17,14 +17,14 @@
   --fw-reg: 400;
   --fw-bold: 800;
 
-  --clr-white: #fdf8f4;
+  --clr-white: #fdf2e8;
   --clr-cream: #ffeddf;
   --clr-black: #3c3c3c;
   --clr-pink-primary: #f2bdc7;
   --clr-pink-secondary: #f3c7c1;
-  --clr-brown-primary: #c29f85;
-  --clr-brown-secondary: #a18670;
-  --clr-tan: #edcaa1;
+  --clr-brown-primary: #b89880;
+  --clr-brown-secondary: #9b806b;
+  --clr-tan: #f8cf9f;
 
   --fs-h1: 3rem;
   --fs-h2: 2.25rem;
@@ -42,17 +42,20 @@
 }
 
 /* general styles */
+html {
+  scroll-behavior: smooth;
+}
 body {
-  background: var(--clr-cream);
+  background: var(--clr-pink-primary);
   color: var(--clr-black);
   margin: 0;
   font-family: var(--ff-primary);
   font-size: var(--fs-body);
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
 section {
-  padding: 5em 2em;
+  padding: 5em 2.25em;
 }
 
 img {
@@ -66,6 +69,7 @@ strong { font-weight: var(--fw-bold) }
 h1,
 h2,
 h3 {
+  font-family: var(--ff-primary);
   line-height: 1.1;
   margin: 0;
 }
@@ -73,6 +77,8 @@ h3 {
 h1 { font-size: var(--fs-h1) }
 h2 { font-size: var(--fs-h2) }
 h3 { font-size: var(--fs-h3) }
+
+p { font-family: var(--ff-secondary); }
 
 .section__title {
   margin-bottom: 0.25em;
@@ -93,16 +99,53 @@ h3 { font-size: var(--fs-h3) }
 }
 
 /* header */
-nav { display: none; }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  z-index: 999;
+  display: flex;
+  align-content: space-around;
+}
+
+header img {
+  max-height: 75px;
+  margin: 0.5em 0.75em;
+}
+
+.logo {
+  flex-grow: 3;
+}
+.nav { 
+  justify-content: space-evenly;
+  flex-grow: 1;
+}
+.nav a {
+  color: var(--clr-white);
+  text-decoration: none;
+}
+.nav__list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 2em;
+}
 
 /* landing */
 .landing {
+  padding-top: 8em;
   background-color: var(--clr-pink-primary);
   color: var(--clr-cream);
   position: relative;
 }
 
 @media (min-width: 800px) {
+  .section__subtitle--landing {
+    text-align: right;
+  }
+  
   .landing {
     display: grid;
     width: 100%;
@@ -120,10 +163,6 @@ nav { display: none; }
     grid-area: img;
     min-width: 350px;
   }
-
-  .section__subtitle--landing {
-    text-align: right;
-  }
 }
 
 /* overview */
@@ -132,17 +171,18 @@ nav { display: none; }
 }
 
 .section__title--overview {
-  margin-bottom: 0.1em;
-  position:relative;
+  margin-bottom: 0.2em;
+  position: relative;
 }
 
 .section__subtitle--overview {
-  margin-bottom: 1em;
+  margin-bottom: 3em;
 }
 
 .benefit {
   max-width: 500px;
   margin: 0 auto;
+  text-align: center;
 }
 
 @media (min-width: 800px) {
@@ -157,13 +197,22 @@ nav { display: none; }
   }
 }
 
+/* faq */
+.faq {
+  background-color: var(--clr-cream);
+}
+
 /* contact */
+.section__title--contact {
+  font-family: var(--ff-primary);
+}
 .section__subtitle--contact {
   margin-bottom: 2em;
 }
 .contact {
   background-color: var(--clr-brown-primary);
   color: var(--clr-white);
+  font-family: var(--ff-secondary);
 }
 
 fieldset {
@@ -171,15 +220,10 @@ fieldset {
   padding-left: 0em;
   padding-bottom: 2em;
 }
-label {
-  display: inline-block;
-  width: 120px;
-}
-input {
+label > input[type="text"], label > input[type="email"] {
   width: 300px;
   color: var(--clr-white);
   background-color: var(--clr-brown-primary);
-  font: var(--ff-secondary);
   border-top-style: hidden;
   border-right-style: hidden;
   border-bottom-style: solid;
@@ -204,12 +248,44 @@ textarea {
 }
 ::placeholder {
   color: var(--clr-cream);
-  font-weight: var(--fw-light);
 }
 
-input:focus, textarea:focus, button:focus {
+label > input:focus, textarea:focus {
   outline: none;
   border-color: var(--clr-white);
+}
+
+label > input[type="checkbox"] + * {
+  display: block;
+}
+label > input[type="checkbox"] {
+  display: none;
+}
+label > input[type="checkbox"] + *::before {
+  box-sizing: content-box;
+  content: "";
+  display: inline-block;
+  vertical-align: bottom;
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  margin-right: 0.75rem;
+  margin-bottom: 0.2rem;
+  border-radius: 10%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--clr-brown-secondary);
+}
+label > input[type="checkbox"]:checked + * {
+  color: var(--clr-white);
+}
+label > input[type="checkbox"]:checked + *::before {
+  content: "X";
+  text-align: center;
+  color: var(--clr-white);
+}
+label:hover {
+  cursor: pointer;
 }
 
 button {
