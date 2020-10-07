@@ -6,7 +6,7 @@
     <title>ice cream social</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,800|Open+Sans:300,400,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,600,800|Open+Sans:400,700&display=swap">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" -->
     <!-- integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" /> -->
     <link rel="stylesheet" href="css/styles.css">
@@ -34,9 +34,9 @@
     <!-- Header -->
     <header>
       <div class="logo">
-        <a href="#"><img src="res/logo.png"></a>
+        <a href="#"><img src="res/logo-large.png" id="logo" width="100"></a>
       </div>
-      <nav class="nav">
+      <nav class="nav" id="nav">
         <ul class="nav__list">
           <li class="nav__item"><a href="#" class="nav__link">home</a></li>
           <li class="nav__item"><a href="#overview" class="nav__link">overview</a></li>
@@ -63,7 +63,7 @@
         why ice cream?
       </h2>
       <p class="section__subtitle section__subtitle--overview">
-        more than just a frozen treat for those undergoing treatment
+        more than just a frozen treat after treatment
       </p>
       <div class="benefits">
         <div class="benefit">
@@ -85,7 +85,19 @@
     <!-- FAQ -->
     <section class="faq" id="faq">
       <h2 class="section__title section__title--faq">faq</h2>
-      <h3>how can i help?</h3>
+      <h3>can you tell me more?</h3>
+      <p>1. chemo patients often experience mouth sores the days after receiving an infusion.</p>
+      <p>doctors recommend sucking on ice cubes to reduce bloodflow to the mouth during infusion, 
+        consequently reducing chemo exposure to the sensitive cells of the mouth lining.
+      </p>
+      <p>(((but we think ice cream is more fun)))</p>
+      <p>2. chemo patients are often encouraged to eat when they can. ice cream provides necessary 
+        calories during treatment.
+      </p>
+      <p>3. chemo is tough!!! we hope chemo patients can have a sweet treat to look forward to when 
+        they go to the hospital.
+      </p>
+      <h3>great, how can i help?</h3>
       <p>this project is currently in development. feel free to reach out.</p>
       <p><strong>we are looking for:</strong></p>
       <ul>
@@ -105,17 +117,18 @@
 
       <h3>why are you doing this?</h3>
       <p>my father recently went through chemotherapy.</p>
-      <p>we would bring ice cream to his chemo sessions to help with the mouth sores</p>
-      <p> and i asked myself why shouldn’t everyone have a little bit of ice cream?</p>
+      <p>we would bring ice cream to his chemo sessions to help with the mouth sores
+         and i asked myself, "why shouldn’t everyone have a little bit of ice cream?"</p>
       <p>so here we are.</p>
     </section>
 
     <!-- Contact -->
     <section class="contact" id="contact">
       <h2 class="section__title section__title--contact">get in touch</h2>
-      <p class="section__subtitle section__subtitle--contact">
-        please contact us using the form below, or by emailing me@harrisonlin.com.
+      <p>please contact us using the form below, or by emailing <a href="mailto:me@harrisonlin.com">
+          me@harrisonlin.com</a>.
       </p>
+      <br>
       <form name="contact" method="POST" data-netlify="true">
         <fieldset>
           <label>
@@ -160,10 +173,7 @@
           <h2><em>thank you - your message has been sent!</em></h2>
         </div> -->
       </form>
-
-      <!-- Submit form to Google using AJAX -->
-      <script data-cfasync="false" src="js/form-submission-handler.js"></script>
-      </section>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -186,5 +196,7 @@
         </li>
       </ul>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>

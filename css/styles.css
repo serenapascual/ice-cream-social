@@ -13,18 +13,18 @@
   --ff-primary: 'Nunito', sans-serif;
   --ff-secondary: 'Open Sans', sans-serif;
 
-  --fw-light: 300;
   --fw-reg: 400;
-  --fw-bold: 800;
+  --fw-med: 600;
+  --fw-heavy: 800;
 
   --clr-white: #fdf2e8;
   --clr-cream: #ffeddf;
   --clr-black: #3c3c3c;
   --clr-pink-primary: #f2bdc7;
   --clr-pink-secondary: #f3c7c1;
-  --clr-brown-primary: #b89880;
+  --clr-brown-primary: #b49481;
   --clr-brown-secondary: #9b806b;
-  --clr-tan: #f8cf9f;
+  --clr-tan: #f5cea3;
 
   --fs-h1: 3rem;
   --fs-h2: 2.25rem;
@@ -46,24 +46,21 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background: var(--clr-pink-primary);
+  background: var(--clr-cream);
   color: var(--clr-black);
   margin: 0;
   font-family: var(--ff-primary);
   font-size: var(--fs-body);
   line-height: 1.4;
 }
-
 section {
-  padding: 5em 2.25em;
+  padding: 6em 5.25em;
 }
-
 img {
   display: block;
   max-width: 100%;
 }
-
-strong { font-weight: var(--fw-bold) }
+strong { font-weight: var(--fw-heavy) }
 
 /* typography */
 h1,
@@ -78,14 +75,18 @@ h1 { font-size: var(--fs-h1) }
 h2 { font-size: var(--fs-h2) }
 h3 { font-size: var(--fs-h3) }
 
-p { font-family: var(--ff-secondary); }
+p {
+  font-size: var(-ff-body);
+  font-family: var(--ff-secondary); 
+}
 
 .section__title {
   margin-bottom: 0.25em;
 }
 
 .section__title--landing {
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-heavy);
+  line-height: 3.7rem;
 }
 
 .section__subtitle {
@@ -106,21 +107,20 @@ header {
   right: 0;
   height: 75px;
   z-index: 999;
-  display: flex;
-  align-content: space-around;
-}
-
-header img {
-  max-height: 75px;
-  margin: 0.5em 0.75em;
 }
 
 .logo {
-  flex-grow: 3;
+  float: left;
+  margin: 0.5em 0.5em;
 }
+
 .nav { 
+  float: right;
   justify-content: space-evenly;
-  flex-grow: 1;
+  padding: 0.5em 1em;
+  transition: 0.3s;
+  font-size: 1.25rem;
+  font-weight: var(--fw-med);
 }
 .nav a {
   color: var(--clr-white);
@@ -130,22 +130,55 @@ header img {
   list-style: none;
   display: flex;
   justify-content: space-between;
-  padding: 0.5em 2em;
 }
+.nav__item {
+  padding: 0em 1em;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    width: 50px !important;
+  }
+  .nav {
+    font-size: 1rem;
+  }
+}
+
 
 /* landing */
 .landing {
+  height: 100vh;
   padding-top: 8em;
   background-color: var(--clr-pink-primary);
   color: var(--clr-cream);
   position: relative;
+}
+.landing img {
+  padding: 1rem;
+}
+@media (max-width: 800px) {
+  .section__subtitle--landing {
+    font-size: 1.1rem;
+  }
+  .landing {
+    padding-top: 5em;
+  }
+  .landing__img {
+    grid-area: img;
+    max-height: 300px;
+  }
+}
+
+@media (min-width: 600px) {
+  .landing {
+    padding-top: 8em;
+  }
 }
 
 @media (min-width: 800px) {
   .section__subtitle--landing {
     text-align: right;
   }
-  
   .landing {
     display: grid;
     width: 100%;
@@ -158,7 +191,6 @@ header img {
     grid-template-columns: min-content auto;
     text-align: right;
   }
-
   .landing__img {
     grid-area: img;
     min-width: 350px;
@@ -185,21 +217,43 @@ header img {
   text-align: center;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
   .benefits {
     display: flex;
     max-width: 1000px;
     margin: 0 auto;
   }
-
   .benefit + .benefit {
     margin-left: 2em;
+  }
+}
+
+@media (max-width: 600px) {
+  .benefit + .benefit {
+    margin-top: 3em;
   }
 }
 
 /* faq */
 .faq {
   background-color: var(--clr-cream);
+}
+
+.faq a {
+  color: inherit;
+  text-decoration-color: var(--clr-brown-primary);
+}
+
+.faq a:hover {
+  text-decoration: none;
+}
+
+.faq ul {
+  font-family: var(--ff-secondary);
+}
+
+.faq h3 {
+  margin-top: 2rem;
 }
 
 /* contact */
@@ -213,6 +267,13 @@ header img {
   background-color: var(--clr-brown-primary);
   color: var(--clr-white);
   font-family: var(--ff-secondary);
+}
+.contact a {
+  color: inherit;
+  text-decoration-color: var(--clr-pink-primary);
+}
+.contact a:hover {
+  text-decoration: none;
 }
 
 fieldset {
@@ -257,7 +318,16 @@ label > input:focus, textarea:focus {
 
 label > input[type="checkbox"] + * {
   display: block;
+  margin-top: 0.4em;
 }
+
+@media (min-width: 600px) {
+  label > input[type="checkbox"] + * {
+    display: inline-block;
+    margin-right: 2em;
+  }
+}
+
 label > input[type="checkbox"] {
   display: none;
 }
