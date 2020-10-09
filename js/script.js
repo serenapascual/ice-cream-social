@@ -60,3 +60,23 @@ navLinks.forEach(link => {
     document.body.classList.remove('nav-open');
   })
 });
+
+
+// Overview transition 
+$(document).ready(function() {
+    
+  $(window).scroll( function(){
+  
+      $('.benefit').each(function(i) {
+          
+          var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+          var bottom_of_window = $(window).scrollTop() + $(window).height();
+          
+          /* If the object is completely visible in the window, fade in */
+          if( bottom_of_window > bottom_of_object ){
+              // $(this).animate({'opacity':'1'},500);
+              $(this).delay((i++) * 500).fadeTo(1000, 1);
+          }
+      }); 
+  });
+});
