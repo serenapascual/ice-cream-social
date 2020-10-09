@@ -22,6 +22,7 @@
   --clr-black: #3c3c3c;
   --clr-pink-primary: #f2bdc7;
   --clr-pink-secondary: #f3c7c1;
+  --clr-pink-tertiary: #f1bdb9;
   --clr-brown-primary: #b49481;
   --clr-brown-secondary: #9b806b;
   --clr-tan: #f5cea3;
@@ -53,9 +54,16 @@ body {
   font-size: var(--fs-body);
   line-height: 1.4;
 }
+
 section {
-  padding: 6em 5.25em;
+  padding: 6em 2.5em;
 }
+@media (min-width: 600px) {
+  section {
+    padding: 6em 5.25em;
+  }
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -106,7 +114,7 @@ header {
   left: 0;
   right: 0;
   height: 75px;
-  z-index: 999;
+  z-index: 100;
 }
 
 .logo {
@@ -114,36 +122,144 @@ header {
   margin: 0.5em 0.5em;
 }
 
-.nav { 
-  float: right;
-  justify-content: space-evenly;
-  padding: 0.5em 1em;
-  transition: 0.3s;
-  font-size: 1.25rem;
-  font-weight: var(--fw-med);
+#lottie {
+  width: 100px;
 }
-.nav a {
-  color: var(--clr-white);
-  text-decoration: none;
+#lottie:hover {
+  cursor: pointer;
 }
-.nav__list {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
+
+.nav-toggle {
+  padding: 0.5em;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  z-index: 500;
 }
-.nav__item {
-  padding: 0em 1em;
+
+.hamburger {
+  display: block;
+  position: relative;
 }
+
+.hamburger, .hamburger::before, .hamburger::after {
+  background: var(--clr-white);
+  width: 1.5em;
+  height: 3px;
+  border-radius: 1em;
+  transition: transform 250ms ease-in-out;
+}
+
+.hamburger::before, .hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.hamburger::before { top: 6px; }
+.hamburger::after { bottom: 6px; }
 
 @media (max-width: 600px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+  }
   .logo {
     width: 50px !important;
+    margin: 0em;
   }
   .nav {
+    position: fixed;
+    background-color: var(--clr-cream);
+    color: var(--clr-black);
     font-size: 1rem;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 250ms ease-in-out;
+    /* opacity: 0; */
+  }
+
+  .nav__list {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav__link {
+    color: inherit;
+    font-weight: var(--fw-med);
+    font-size: var(--fs-h3);
+    text-decoration: none;
+  }
+
+  .nav__link:hover {
+    color: var(--clr-brown-primary)
   }
 }
 
+.nav-open .nav {
+  transform: translateX(0);
+  /* opacity: 1; */
+}
+.nav-open .hamburger, .nav-open .hamburger::before, .nav-open .hamburger::after {
+  background: var(--clr-black);
+}
+.nav-open .hamburger {
+  transform: rotate(0.625turn);
+}
+.nav-open .hamburger::before {
+  transform: rotate(90deg) translate(-6px);
+}
+.nav-open .hamburger::after {
+  opacity: 0;
+}
+
+@media (min-width: 600px){
+  .nav { 
+    float: right;
+    justify-content: space-evenly;
+    padding: 0.5em 0.75em;
+    transition: 0.3s;
+    font-size: 1.25rem;
+    font-weight: var(--fw-med);
+  }
+  .nav a {
+    color: var(--clr-white);
+    text-decoration: none;
+    padding: 0.25em;
+  }
+
+  .nav__list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav__item {
+    padding: 0.25em 0.75em;
+    transition: 0.2s;
+  }
+  .nav__item:hover {
+    transform: translateY(-0.25em);
+    transition: 0.2s;
+  }
+  header button {
+    display: none;
+  }
+}
 
 /* landing */
 .landing {
@@ -236,7 +352,7 @@ header {
 
 /* faq */
 .faq {
-  background-color: var(--clr-cream);
+  background-color: var(--clr-pink-tertiary);
 }
 
 .faq a {
@@ -276,13 +392,13 @@ header {
   text-decoration: none;
 }
 
-fieldset {
+.contact fieldset {
   border: 0px;
   padding-left: 0em;
   padding-bottom: 2em;
 }
-label > input[type="text"], label > input[type="email"] {
-  width: 300px;
+.contact label > input[type="text"], label > input[type="email"] {
+  width: 200px;
   color: var(--clr-white);
   background-color: var(--clr-brown-primary);
   border-top-style: hidden;
@@ -293,8 +409,8 @@ label > input[type="text"], label > input[type="email"] {
   border-color: var(--clr-brown-secondary);
   box-sizing: border-box;
 }
-textarea {
-  width: 500px;
+.contact textarea {
+  width: 300px;
   color: var(--clr-white);
   background: none;
   font: var(--ff-secondary);
@@ -307,31 +423,37 @@ textarea {
   box-sizing: border-box;
   vertical-align: top;
 }
-::placeholder {
+.contact ::placeholder {
   color: var(--clr-cream);
 }
 
-label > input:focus, textarea:focus {
+.contact label > input:focus, textarea:focus {
   outline: none;
   border-color: var(--clr-white);
 }
 
-label > input[type="checkbox"] + * {
+.contact label > input[type="checkbox"] + * {
   display: block;
   margin-top: 0.4em;
 }
 
 @media (min-width: 600px) {
-  label > input[type="checkbox"] + * {
+  .contact textarea {
+    width: 500px;
+  }
+  .contact label > input[type="text"], label > input[type="email"] {
+    width: 300px;
+  }
+  .contact label > input[type="checkbox"] + * {
     display: inline-block;
     margin-right: 2em;
   }
 }
 
-label > input[type="checkbox"] {
+.contact label > input[type="checkbox"] {
   display: none;
 }
-label > input[type="checkbox"] + *::before {
+.contact label > input[type="checkbox"] + *::before {
   box-sizing: content-box;
   content: "";
   display: inline-block;
@@ -346,19 +468,19 @@ label > input[type="checkbox"] + *::before {
   border-width: 2px;
   border-color: var(--clr-brown-secondary);
 }
-label > input[type="checkbox"]:checked + * {
+.contact label > input[type="checkbox"]:checked + * {
   color: var(--clr-white);
 }
-label > input[type="checkbox"]:checked + *::before {
+.contact label > input[type="checkbox"]:checked + *::before {
   content: "X";
   text-align: center;
   color: var(--clr-white);
 }
-label:hover {
+.contact label:hover {
   cursor: pointer;
 }
 
-button {
+.contact button {
   background-color: var(--clr-brown-primary);
   color: var(--clr-white);
   font: var(--ff-secondary);
@@ -367,15 +489,29 @@ button {
   border: 2px solid;
   border-radius: 25px;
   text-align: center;
-  transition: all 0.25s ease;
+  transition: all 0.3s ease-out;
 }
-button:hover {
+.contact button:hover {
   cursor: pointer;
   background-color: var(--clr-white);
   border-color: var(--clr-white);
   color: var(--clr-brown-secondary);
+  margin-left: 0.5em;
+  animation-name: slidein;
 }
-button:focus {
+.slidein {
+  animation-duration: 0.3s;
+}
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+  }
+
+  to {
+    margin-left: 0%;
+  }
+}
+.contact button:focus {
   outline: none;
 }
 
