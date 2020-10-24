@@ -159,7 +159,7 @@ header {
 }
 
 .hamburger::before, .hamburger::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
@@ -507,19 +507,20 @@ header {
 .contact label:hover {
   cursor: pointer;
 }
-
 .contact button {
-  background-color: var(--clr-brown-primary);
-  color: var(--clr-white);
-  font: var(--ff-secondary);
   margin-top: 2em;
-  padding: 8px 16px;
   border: 2px solid;
   border-radius: 25px;
   text-align: center;
   transition: all 0.3s ease-out;
 }
-.contact button:hover {
+.contact button[type="submit"] {
+  padding: 8px 16px;
+  background-color: var(--clr-brown-primary);
+  color: var(--clr-white);
+  font: var(--ff-secondary);
+}
+.contact button:hover[type="submit"] {
   cursor: pointer;
   background-color: var(--clr-white);
   border-color: var(--clr-white);
@@ -539,7 +540,22 @@ header {
     margin-left: 0%;
   }
 }
-.contact button:focus {
+.contact button[type="button"] {
+  padding: 9px 12px;
+  background-color: var(--clr-white);
+  border-color: var(--clr-white);
+  color: var(--clr-brown-secondary);
+  display: none;
+}
+.success__message {
+  margin-left: 1em;
+  display: none;
+}
+
+.contact button:focus[type="submit"] {
+  /* outline: none; */
+}
+.contact button:focus[type="button"] {
   outline: none;
 }
 

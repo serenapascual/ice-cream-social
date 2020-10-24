@@ -132,7 +132,13 @@
           me@harrisonlin.com</a>.
       </p>
       <br>
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="honeypot">
+      <form 
+        name="contact"
+        method="POST"
+        data-netlify="true" 
+        netlify-honeypot="honeypot"
+        action="/#success"
+      >
         <fieldset>
           <label>
           <input id="name" name="name" type="text" required placeholder="name*" />
@@ -168,13 +174,14 @@
           <input id="honeypot" type="text" name="honeypot" value="" />
         </fieldset>
         
-        <button type="submit">
+
+        <button id="submit" type="submit">
           send &rsaquo;
         </button>
-        
-        <!-- <div class="thankyou_message" style="display:none;">
-          <h2><em>thank you - your message has been sent!</em></h2>
-        </div> -->
+        <button id="submitted" type="button">
+          &#10004;
+        </button>
+        <span id="success" class="success__message">thanks for your message!</span>
       </form>
     </section>
 

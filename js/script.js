@@ -63,20 +63,31 @@ navLinks.forEach(link => {
 
 
 // Overview transition 
-$(document).ready(function() {
-    
-  $(window).scroll( function(){
-  
-      $('.benefit').each(function(i) {
+$(window).on("load", function() {
+  $(window).scroll(function() {
+    const bottom_of_window = $(this).scrollTop() + $(this).innerHeight();
+
+    $('.benefit').each(function(i) {
+        const bottom_of_object = $(this).offset().top + $(this).outerHeight();
+        
+        /* If the object is completely visible in the window, fade in */
+        if(bottom_of_window > bottom_of_object) {
+            $(this).animate({'opacity':'1'},500);
+            // $(this).delay((i++) * 500).fadeTo(500, 1);
+        } else {
           
-          var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-          var bottom_of_window = $(window).scrollTop() + $(window).height();
-          
-          /* If the object is completely visible in the window, fade in */
-          if( bottom_of_window > bottom_of_object ){
-              // $(this).animate({'opacity':'1'},500);
-              $(this).delay((i++) * 500).fadeTo(1000, 1);
-          }
-      }); 
-  });
+        }
+    }); 
+  }).scroll();
 });
+
+// Form submission success
+const url = window.location.href;
+const message = document.getElementById('submitted');
+
+// Parse url for string 'success' and show/hide buttons appropriately
+if (url.search('success') > 0) {
+  $('#submit').css('display', 'none');
+  $('#submitted').css('display', 'inline-block');
+  $('#success').css('display', 'inline-block');
+}
