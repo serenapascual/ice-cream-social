@@ -83,7 +83,6 @@ $(window).on("load", function() {
 
 // Form submission success
 const url = window.location.href;
-const message = document.getElementById('submitted');
 
 // Parse url for string 'success' and show/hide buttons appropriately
 if (url.search('success') > 0) {

@@ -165,8 +165,8 @@ header {
   right: 0;
 }
 
-.hamburger::before { top: 6px; }
-.hamburger::after { bottom: 6px; }
+.hamburger::before { top: 7px; }
+.hamburger::after { bottom: 7px; }
 
 @media (max-width: 600px) {
   header {
@@ -226,7 +226,7 @@ header {
   transform: rotate(0.625turn);
 }
 .nav-open .hamburger::before {
-  transform: rotate(90deg) translate(-6px);
+  transform: rotate(90deg) translate(-7px);
 }
 .nav-open .hamburger::after {
   opacity: 0;
@@ -267,58 +267,65 @@ header {
 
 /* landing */
 .landing {
-  padding-top: 8em;
   background-color: var(--clr-pink-primary);
   color: var(--clr-cream);
-  position: relative;
+  padding-top: 6em;
+}
+.section__subtitle--landing {
+  margin-bottom: 1em;
 }
 .landing img {
-  padding: 1rem;
+  padding: 1em;
 }
 
-@media (min-height: 500px) {
-  .landing { height: 100vh; }
-}
-
-@media (max-width: 800px) {
+/* Nav links hidden in hamburger menu */
+@media (max-width: 600px) {
+  .landing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .section__subtitle--landing {
     font-size: 1.1rem;
   }
-  .landing {
-    padding-top: 5em;
-  }
-  .landing__img {
-    grid-area: img;
-    max-height: 300px;
+}
+
+@media (min-height: 500px) {
+  @media (min-width: 800px) {
+    .landing {
+      height: 100vh;
+    }
   }
 }
 
+/* Nav links visible */
 @media (min-width: 600px) {
   .landing {
-    padding-top: 8em;
+    padding-top: 10em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 @media (min-width: 800px) {
-  .section__subtitle--landing {
-    text-align: right;
-  }
   .landing {
-    display: grid;
-    width: 100%;
-    margin: 0 auto;
-    grid-column-gap: 2em;
-    grid-template-areas:
-      "img ."
-      "img title"
-      "img subtitle";
-    grid-template-columns: min-content auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .landing__text {
     text-align: right;
+    order: 2;
+    flex-basis: 60%;
+    max-width: 30vw;
   }
   .landing__img {
-    grid-area: img;
-    min-width: 450px;
-    /* mix-blend-mode: hard-light; */
+    order: 1;
+  }
+  .landing__img img {
+    max-height: 80vh;
   }
 }
 
