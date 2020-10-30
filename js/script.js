@@ -41,27 +41,28 @@ function disappear() {
 }
 
 function appear() {
-  if (!visible) {
     logoAnimation.setDirection(-direction);
     logoAnimation.goToAndPlay(0, true);
     visible = true;
-  }
 }
 
 // Call preventDefault() to ensure event is handled only once
-// if a touch event listener gets added too
+// if device has touch too
 logo.addEventListener('click', (e) => {
   e.preventDefault();
   disappear();
+  console.log('click me!');
 }, false);
-logo.addEventListener('mouseleave', appear, false);
+logo.addEventListener('mouseleave', (e) => {
+    // Don't reanimate unless logo has been clicked
+  if (!visible) appear();
+}, false);
 
-window.addEventListener('touchstart', function firstTouchDetected() {
-  logo.addEventListener('touch', (e) => {
-    e.preventDefault();
-    appear();
-  }, false);
-});
+logo.addEventListener('touchstart', (e) => {
+  e.preventDefault();
+  appear();
+  console.log('touch me!');
+}, false);
 
 // Nav stuff
 const navToggle = document.querySelector('.nav-toggle');

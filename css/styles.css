@@ -97,11 +97,6 @@ p2 {
   margin-bottom: 0.25em;
 }
 
-.section__title--landing {
-  font-weight: var(--fw-heavy);
-  line-height: 3.7rem;
-}
-
 .section__subtitle {
   margin: 0;
   font-size: var(--fs-h3);
@@ -271,6 +266,10 @@ header {
   color: var(--clr-cream);
   padding-top: 8em;
 }
+.section__title--landing {
+  font-weight: var(--fw-heavy);
+  line-height: 2.8rem;
+}
 .section__subtitle--landing {
   margin-bottom: 1em;
 }
@@ -311,6 +310,9 @@ header {
 }
 
 @media (min-width: 800px) {
+  .section__title--landing {
+    line-height: 3.8rem;
+  }
   .landing {
     display: flex;
     flex-direction: row;
