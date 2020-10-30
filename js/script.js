@@ -51,7 +51,7 @@ function appear() {
 logo.addEventListener('click', (e) => {
   e.preventDefault();
   disappear();
-  console.log('click me!');
+  window.scrollTo(0, 0);
 }, false);
 logo.addEventListener('mouseleave', (e) => {
     // Don't reanimate unless logo has been clicked
@@ -61,7 +61,7 @@ logo.addEventListener('mouseleave', (e) => {
 logo.addEventListener('touchstart', (e) => {
   e.preventDefault();
   appear();
-  console.log('touch me!');
+  window.scrollTo(0, 0);
 }, false);
 
 // Nav stuff
