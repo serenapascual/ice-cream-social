@@ -269,13 +269,14 @@ header {
 .landing {
   background-color: var(--clr-pink-primary);
   color: var(--clr-cream);
-  padding-top: 6em;
+  padding-top: 8em;
 }
 .section__subtitle--landing {
   margin-bottom: 1em;
 }
 .landing img {
   padding: 1em;
+  max-height: 50vh;
 }
 
 /* Nav links hidden in hamburger menu */
@@ -284,6 +285,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
   .section__subtitle--landing {
     font-size: 1.1rem;
@@ -291,7 +293,7 @@ header {
 }
 
 @media (min-height: 500px) {
-  @media (min-width: 800px) {
+  @media (min-width: 400px) {
     .landing {
       height: 100vh;
     }
@@ -301,7 +303,7 @@ header {
 /* Nav links visible */
 @media (min-width: 600px) {
   .landing {
-    padding-top: 10em;
+    padding-top: 8em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -324,8 +326,8 @@ header {
   .landing__img {
     order: 1;
   }
-  .landing__img img {
-    max-height: 80vh;
+  .landing img {
+    max-height: 70vh;
   }
 }
 
