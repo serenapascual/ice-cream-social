@@ -1,4 +1,4 @@
-// Logo stuff
+// Logo resizing
 resize = function() {
   const imageWidth = $("#lottie").width();
 
@@ -19,6 +19,7 @@ resize = function() {
 }
 resize();
 
+// Logo animation
 let logo = document.getElementById("lottie");
 let direction = -1; // normal play direction
 
@@ -33,18 +34,33 @@ let logoAnimation = bodymovin.loadAnimation({
 logoAnimation.goToAndStop(30, true);
 let visible = true;
 
-logo.addEventListener('click', (e) => {
+function disappear() {
   logoAnimation.setDirection(direction);
   logoAnimation.goToAndPlay(30, true);
   visible = false;
-});
+}
 
-logo.addEventListener('mouseleave', (e) => {
+function appear() {
   if (!visible) {
     logoAnimation.setDirection(-direction);
     logoAnimation.goToAndPlay(0, true);
     visible = true;
   }
+}
+
+// Call preventDefault() to ensure event is handled only once
+// if a touch event listener gets added too
+logo.addEventListener('click', (e) => {
+  e.preventDefault();
+  disappear();
+}, false);
+logo.addEventListener('mouseleave', appear, false);
+
+window.addEventListener('touchstart', function firstTouchDetected() {
+  logo.addEventListener('touch', (e) => {
+    e.preventDefault();
+    appear();
+  }, false);
 });
 
 // Nav stuff
