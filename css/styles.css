@@ -66,14 +66,15 @@ section {
 }
 
 rect {
-  fill: var(--clr-pink-primary);
+  fill: var(--clr-pink-secondary);
 }
 path {
-  fill: var(--clr-pink-secondary);
+  fill: var(--clr-pink-primary);
 }
 
 curved-section {
   display: block;
+  /* background-color: var(--clr-pink-secondary); */
   background-color: var(--clr-pink-secondary);
   /* padding: 6em 2.5em; */
 }
