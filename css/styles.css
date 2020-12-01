@@ -285,28 +285,39 @@ header {
   max-height: 50vh;
   max-width: 50vw;
 }
-.supersection {
+.supersection__landing {
   background-color: var(--clr-pink-secondary);
 }
-.supersection svg {
+.supersection__landing svg {
   grid-area: svg;
   max-height: 20vh;
 }
-.supersection rect {
+.supersection__landing rect {
   fill: var(--clr-pink-secondary);
 }
-.supersection path {
+.supersection__landing path {
   fill: var(--clr-pink-primary);
 }
 
 /* Nav links hidden in hamburger menu */
 @media (max-width: 600px) {
   .landing {
-    display: flex;
-    flex-direction: column;
+    padding: 6em 6em 2em 6em;
+    display: grid;
+    grid-template-areas:
+    "text"
+    "image"
+    "svg";
     align-items: center;
     justify-content: center;
   }
+  .landing__text {
+    max-width: 100vw;
+  }
+  .landing img  {
+    max-width: 60vw;
+  }
+  
   .section__subtitle--landing {
     font-size: 1.1rem;
   }
@@ -341,6 +352,20 @@ header {
 }
 .section__subtitle--overview {
   margin-bottom: 3em;
+}
+.supersection__overview {
+  background-color: var(--clr-pink-tertiary);
+}
+.supersection__overview svg {
+  grid-area: svg;
+  width: 100vw;
+  max-height: 20vh;
+}
+.supersection__overview rect {
+  fill: var(--clr-pink-tertiary);
+}
+.supersection__overview path {
+  fill: var(--clr-pink-secondary);
 }
 
 .benefit {
