@@ -30,7 +30,7 @@
 
   --fs-h1: 3rem;
   --fs-h2: 2.25rem;
-  --fs-h3: 1.25rem;
+  --fs-h3: 1.2rem;
   --fs-body: 1rem;
 }
 
@@ -38,7 +38,7 @@
   :root {
     --fs-h1: 4.5rem;
     --fs-h2: 3.75rem;
-    --fs-h3: 1.5rem;
+    --fs-h3: 1.3rem;
     --fs-body: 1.125rem;
   }
 }
@@ -271,6 +271,7 @@ header {
   line-height: 2.8rem;
 }
 .section__subtitle--landing {
+  font-size: 1.2rem;
   margin-bottom: 1em;
 }
 .landing img {
@@ -301,6 +302,13 @@ header {
 
 /* Nav links hidden in hamburger menu */
 @media (max-width: 600px) {
+  .section__title--landing {
+    font-size: 4em;
+    line-height: 3.2rem;
+  }
+  .section__subtitle--landing {
+    font-size: 1.1rem;
+  }
   .landing {
     padding: 6em 6em 2em 6em;
     display: grid;
@@ -317,14 +325,15 @@ header {
   .landing img  {
     max-width: 60vw;
   }
-  
-  .section__subtitle--landing {
-    font-size: 1.1rem;
-  }
 }
 
 /* Nav links visible */
 @media (min-width: 600px) {
+  .section__title--landing {
+    font-size: 4em;
+    line-height: 3.2rem;
+  }
+
   .landing {
     display: grid;
     grid-template-areas:
@@ -408,28 +417,41 @@ header {
   .benefit + .benefit {
     margin-top: 3em;
   }
+  .benefits {
+    padding-bottom: 2em;
+  }
 }
 
 /* faq */
 .faq {
   background-color: var(--clr-pink-tertiary);
 }
-
 .faq a {
   color: inherit;
   text-decoration-color: var(--clr-brown-primary);
 }
-
 .faq a:hover {
   text-decoration: none;
 }
-
 .faq ul {
   font-family: var(--ff-secondary);
 }
-
 .faq h3 {
   margin-top: 2rem;
+}
+.supersection__faq {
+  background-color: var(--clr-brown-primary);
+}
+.supersection__faq svg {
+  grid-area: svg;
+  width: 100vw;
+  max-height: 20vh;
+}
+.supersection__faq rect {
+  fill: var(--clr-brown-primary);
+}
+.supersection__faq path {
+  fill: var(--clr-pink-tertiary);
 }
 
 /* contact */
@@ -450,6 +472,19 @@ header {
 }
 .contact a:hover {
   text-decoration: none;
+}
+.supersection__contact {
+  background-color: var(--clr-tan);
+}
+.supersection__contact svg {
+  grid-area: svg;
+  max-height: 20vh;
+}
+.supersection__contact rect {
+  fill: var(--clr-tan);
+}
+.supersection__contact path {
+  fill: var(--clr-brown-primary);
 }
 
 .contact fieldset {
@@ -598,7 +633,7 @@ footer {
   flex-wrap: wrap;
   align-items: baseline;
   background-color: var(--clr-tan);
-  padding: 3em 2em 2em 2em;
+  padding: 0em 2em 3em 2em;
 }
 
 footer a { color: inherit; }

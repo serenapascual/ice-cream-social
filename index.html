@@ -102,104 +102,117 @@
     </div>
 
     <!-- FAQ -->
-    <section class="faq" id="faq">
-      <h2 class="section__title section__title--faq">faq</h2>
-      <h3>can you tell me more?</h3>
-      <p><strong>1.</strong> chemo patients often experience mouth sores the days after receiving an infusion.</p>
-      <p>doctors recommend sucking on ice cubes to reduce bloodflow to the mouth during infusion, 
-        consequently reducing chemo exposure to the sensitive cells of the mouth lining.
-      </p>
-      <p2>(((but we think ice cream is more fun)))</p2>
-      <p><strong>2.</strong> chemo patients are often encouraged to eat when they can. ice cream provides necessary 
-        calories during treatment.
-      </p>
-      <p><strong>3.</strong> chemo is tough!!! we hope chemo patients can have a sweet treat to look forward to when 
-        they go to the hospital.
-      </p>
-      <h3>great, how can i help?</h3>
-      <p>this project is currently in development. feel free to reach out.</p>
-      <p><strong>we are looking for:</strong></p>
-      <ul>
-        <li>donors to fund project development</li>
-        <li>devs to improve site</li>
-        <li>legal counsel for establishing non-profit status</li>
-      </ul>
-      <p><strong>we want to interview:</strong></p>
-      <ul>
-        <li>ice cream shop owners</li>
-        <li>hospital administrators</li>
-        <li>chemo patients</li>
-      </ul>
+    <div class="supersection__faq" id="faq">
+      <section class="faq">
+        <h2 class="section__title section__title--faq">faq</h2>
+        <h3>can you tell me more?</h3>
+        <p><strong>1.</strong> chemo patients often experience mouth sores the days after receiving an infusion.</p>
+        <p>doctors recommend sucking on ice cubes to reduce bloodflow to the mouth during infusion, 
+          consequently reducing chemo exposure to the sensitive cells of the mouth lining.
+        </p>
+        <p2>(((but we think ice cream is more fun)))</p2>
+        <p><strong>2.</strong> chemo patients are often encouraged to eat when they can. ice cream provides necessary 
+          calories during treatment.
+        </p>
+        <p><strong>3.</strong> chemo is tough!!! we hope chemo patients can have a sweet treat to look forward to when 
+          they go to the hospital.
+        </p>
+        <h3>great, how can i help?</h3>
+        <p>this project is currently in development. feel free to reach out.</p>
+        <p><strong>we are looking for:</strong></p>
+        <ul>
+          <li>donors to fund project development</li>
+          <li>devs to improve site</li>
+          <li>legal counsel for establishing non-profit status</li>
+        </ul>
+        <p><strong>we want to interview:</strong></p>
+        <ul>
+          <li>ice cream shop owners</li>
+          <li>hospital administrators</li>
+          <li>chemo patients</li>
+        </ul>
 
-      <h3>who are you?</h3>
-      <p>my name is <a href="http://www.harrisonlin.com/">harrison lin</a>.</p>
+        <h3>who are you?</h3>
+        <p>my name is <a href="http://www.harrisonlin.com/">harrison lin</a>.</p>
 
-      <h3>why are you doing this?</h3>
-      <p>my father recently went through chemotherapy.</p>
-      <p>we would bring ice cream to his chemo sessions to help with the mouth sores
-         and i asked myself, "why shouldn’t everyone have a little bit of ice cream?"</p>
-      <p>so here we are.</p>
-    </section>
+        <h3>why are you doing this?</h3>
+        <p>my father recently went through chemotherapy.</p>
+        <p>we would bring ice cream to his chemo sessions to help with the mouth sores
+          and i asked myself, "why shouldn’t everyone have a little bit of ice cream?"</p>
+        <p>so here we are.</p>
+      </section>
+
+      <svg viewBox="0 0 800 115" preserveAspectRatio="none">
+        <rect width="100%" height="100%"/>
+        <path fill-opacity="1" d="M 0 0 C 95 85 253 -48 290 40 C 314 115 390 132 427 49 C 456 -29 451 62 483 49 C 553 3 546 132 602 47 C 639 13 661 49 702 52 C 756 59 797 52 800 0 Z"></path>
+      </svg>
+    </div>
 
     <!-- Contact -->
-    <section class="contact" id="contact">
-      <h2 class="section__title section__title--contact">get in touch</h2>
-      <p>please contact us using the form below, or by emailing <a href="mailto:me@harrisonlin.com">
-          me@harrisonlin.com</a>.
-      </p>
-      <br>
-      <form 
-        name="contact"
-        method="POST"
-        data-netlify="true" 
-        netlify-honeypot="honeypot"
-        action="/#success"
-      >
-        <fieldset>
-          <label>
-          <input id="name" name="name" type="text" required placeholder="name*" />
-          </label>
-        </fieldset>
-        <fieldset>
-          <label>
-          <input id="email" name="email" type="email" value="" required placeholder="email address*" />
-          </label>
-        </fieldset>
-        <fieldset>
-          <legend><strong>who are you?</strong></legend>
-          <label for="hospital">
-            <input id="hospital" name="role" type="checkbox" />
-            <span class="label">i work at a hospital</span>
-          </label>
+    <div class="supersection__contact" id="contact">
+      <section class="contact">
+        <h2 class="section__title section__title--contact">get in touch</h2>
+        <p>please contact us using the form below, or by emailing <a href="mailto:me@harrisonlin.com">
+            me@harrisonlin.com</a>.
+        </p>
+        <br>
+        <form 
+          name="contact"
+          method="POST"
+          data-netlify="true" 
+          netlify-honeypot="honeypot"
+          action="/#success"
+        >
+          <fieldset>
+            <label>
+            <input id="name" name="name" type="text" required placeholder="name*" />
+            </label>
+          </fieldset>
+          <fieldset>
+            <label>
+            <input id="email" name="email" type="email" value="" required placeholder="email address*" />
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend><strong>who are you?</strong></legend>
+            <label for="hospital">
+              <input id="hospital" name="role" type="checkbox" />
+              <span class="label">i work at a hospital</span>
+            </label>
 
-          <label for="creamery">
-            <input id="creamery" name="role" type="checkbox" />
-            <span>i work at a creamery</span>
-          </label>
+            <label for="creamery">
+              <input id="creamery" name="role" type="checkbox" />
+              <span>i work at a creamery</span>
+            </label>
 
-          <label for="other">
-            <input id="other" name="role" type="checkbox" />
-            <span>i want to help</span>
-          </label>
-        </fieldset>
-        <fieldset class="text">
-          <textarea id="message" name="message" rows="6" required placeholder="message*" /></textarea>
-        </fieldset>
-        <fieldset class="honeypot-field">
-          <label for="honeypot">assume bot if this is filled out</label>
-          <input id="honeypot" type="text" name="honeypot" value="" />
-        </fieldset>
-        
+            <label for="other">
+              <input id="other" name="role" type="checkbox" />
+              <span>i want to help</span>
+            </label>
+          </fieldset>
+          <fieldset class="text">
+            <textarea id="message" name="message" rows="6" required placeholder="message*" /></textarea>
+          </fieldset>
+          <fieldset class="honeypot-field">
+            <label for="honeypot">assume bot if this is filled out</label>
+            <input id="honeypot" type="text" name="honeypot" value="" />
+          </fieldset>
+          
 
-        <button id="submit" type="submit">
-          send &rsaquo;
-        </button>
-        <button id="submitted" type="button">
-          &#10004;
-        </button>
-        <span id="success" class="success__message">thanks for your message!</span>
-      </form>
-    </section>
+          <button id="submit" type="submit">
+            send &rsaquo;
+          </button>
+          <button id="submitted" type="button">
+            &#10004;
+          </button>
+          <span id="success" class="success__message">thanks for your message!</span>
+        </form>
+      </section>
+            <svg viewBox="0 0 800 90" preserveAspectRatio="none">
+        <rect width="100%" height="100%"/>
+        <path fill-opacity="1" d="M 0 0 C 1 58 32 5 48 25 C 62 46 46 83 66 83 C 85 82 63 36 82 21 C 105 -8 216 89 413 38 C 479 27 487 71 555 74 C 620 74 610 36 680 16 C 719 5 798 27 800 0 Z"></path>
+      </svg>
+    </div>
 
     <!-- Footer -->
     <footer>
