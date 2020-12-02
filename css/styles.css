@@ -107,6 +107,15 @@ p2 {
   font-family: var(--ff-secondary);
 }
 
+/* svg */
+path {
+  shape-rendering: crispEdges;
+}
+
+rect {
+  shape-rendering: crispEdges;
+}
+
 /* header */
 header {
   position: fixed;
@@ -633,7 +642,7 @@ footer {
   flex-wrap: wrap;
   align-items: baseline;
   background-color: var(--clr-tan);
-  padding: 0em 2em 3em 2em;
+  padding: 1em 2em 3em 2em;
 }
 
 footer a { color: inherit; }
