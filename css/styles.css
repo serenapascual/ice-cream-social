@@ -107,15 +107,6 @@ p2 {
   font-family: var(--ff-secondary);
 }
 
-/* svg */
-path {
-  shape-rendering: crispEdges;
-}
-
-rect {
-  shape-rendering: crispEdges;
-}
-
 /* header */
 header {
   position: fixed;
@@ -461,6 +452,8 @@ header {
 }
 .supersection__faq path {
   fill: var(--clr-pink-tertiary);
+  stroke: var(--clr-pink-tertiary);
+  stroke-width: 1px;
 }
 
 /* contact */
@@ -642,7 +635,7 @@ footer {
   flex-wrap: wrap;
   align-items: baseline;
   background-color: var(--clr-tan);
-  padding: 1em 2em 3em 2em;
+  padding: 1em 2em 2.5em 2em;
 }
 
 footer a { color: inherit; }
