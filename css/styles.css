@@ -107,6 +107,19 @@ p2 {
   font-family: var(--ff-secondary);
 }
 
+/* svg */
+svg {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+rect {
+  stroke-width: 0px;
+}
+path {
+  width: 100%;
+  height: 100%;
+}
+
 /* header */
 header {
   position: fixed;
@@ -452,8 +465,6 @@ header {
 }
 .supersection__faq path {
   fill: var(--clr-pink-tertiary);
-  stroke: var(--clr-pink-tertiary);
-  stroke-width: 1px;
 }
 
 /* contact */
