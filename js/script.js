@@ -1,6 +1,6 @@
 // Logo resizing
 resize = function() {
-  const imageWidth = $("#lottie").width();
+  const imageWidth = $("#lottie__logo").width();
 
   // Assign distance for resize to take place over
   let maxScrollDist = 300;
@@ -14,18 +14,18 @@ resize = function() {
     const scrollPos = Math.min($(document).scrollTop(), maxScrollDist);
     const sumScrollDelta = Math.floor(scrollPos * scrollDelta);
     const newWidth = imageWidth - sumScrollDelta;
-    $('#lottie').css('width', newWidth);
+    $('#lottie__logo').css('width', newWidth);
   });
 }
 resize();
 
 // Logo animation
-let logo = document.getElementById("lottie");
+let logo = document.getElementById("lottie__logo");
 let direction = -1; // normal play direction
 
 let logoAnimation = bodymovin.loadAnimation({
   container: logo,
-  path: 'res/data.json',
+  path: 'res/logo/logo_data.json',
   renderer: 'svg',
   loop: false,
   autoplay: false,
@@ -45,6 +45,22 @@ function appear() {
     logoAnimation.goToAndPlay(0, true);
     visible = true;
 }
+
+// Truck animation
+let truck = document.getElementById("lottie__truck");
+
+let truckAnimation = bodymovin.loadAnimation({
+  container: truck,
+  path: 'res/truck/truck_data.json',
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  name: "truck",
+  rendererSettings: {
+  	preserveAspectRatio: 'xMidYMid meet'
+  }
+});
+
 
 // Call preventDefault() to ensure event is handled only once
 // if device has touch too

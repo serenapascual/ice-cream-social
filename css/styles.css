@@ -135,10 +135,10 @@ header {
   margin: 0.5em 0.5em;
 }
 
-#lottie {
+#lottie__logo {
   width: 100px;
 }
-#lottie:hover {
+#lottie__logo:hover {
   cursor: pointer;
 }
 
@@ -287,29 +287,29 @@ header {
   font-size: 1.2rem;
   margin-bottom: 1em;
 }
-.landing img {
-  grid-area: image;
+.supersection__landing {
+  background-color: var(--clr-pink-secondary);
+}
+.landing__img {
+  grid-area: truck;
   max-height: 50vh;
   max-width: 50vw;
 }
 .landing__text {
   grid-area: text;
-  align-self: end;
+  align-self: center;
   justify-self: end;
   max-height: 50vh;
   max-width: 50vw;
 }
-.supersection__landing {
-  background-color: var(--clr-pink-secondary);
-}
-.supersection__landing svg {
-  grid-area: svg;
+.landing__drip svg {
+  grid-area: drip;
   max-height: 20vh;
 }
-.supersection__landing rect {
+.landing__drip rect {
   fill: var(--clr-pink-secondary);
 }
-.supersection__landing path {
+.landing__drip path {
   fill: var(--clr-pink-primary);
 }
 
@@ -327,15 +327,15 @@ header {
     display: grid;
     grid-template-areas:
     "text"
-    "image"
-    "svg";
+    "truck"
+    "drip";
     align-items: center;
     justify-content: center;
   }
   .landing__text {
     max-width: 100vw;
   }
-  .landing img  {
+  .landing__img  {
     max-width: 60vw;
   }
 }
@@ -350,11 +350,10 @@ header {
   .landing {
     display: grid;
     grid-template-areas:
-    "image . text"
-    "svg svg svg";
+    "truck . text"
+    "drip drip drip";
     justify-content: center;
     grid-template-columns: auto 4em 40%;
-    /* grid-template-rows: 80% 10%; */
   }
 }
 
@@ -379,7 +378,6 @@ header {
   background-color: var(--clr-pink-tertiary);
 }
 .supersection__overview svg {
-  grid-area: svg;
   width: 100vw;
   max-height: 20vh;
 }
@@ -456,7 +454,6 @@ header {
   background-color: var(--clr-brown-primary);
 }
 .supersection__faq svg {
-  grid-area: svg;
   width: 100vw;
   max-height: 20vh;
 }
@@ -490,7 +487,6 @@ header {
   background-color: var(--clr-tan);
 }
 .supersection__contact svg {
-  grid-area: svg;
   max-height: 20vh;
 }
 .supersection__contact rect {
