@@ -321,9 +321,10 @@ header {
   }
   .section__subtitle--landing {
     font-size: 1.1rem;
+    margin-bottom: 2em;
   }
   .landing {
-    padding: 6em 6em 2em 6em;
+    padding: 6em 3em 2em 3em;
     display: grid;
     grid-template-areas:
     "text"
@@ -333,10 +334,10 @@ header {
     justify-content: center;
   }
   .landing__text {
-    max-width: 100vw;
+    max-width: 75vw;
   }
   .landing__img  {
-    max-width: 60vw;
+    max-width: 75vw;
   }
 }
 
