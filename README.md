@@ -1,5 +1,9 @@
+<img src="res/favicon-96x96.png" height="96px" width="96px" align="right" />
+
 # ice-cream-social
 A website redesign for an emerging nonprofit. View it [live](https://icecream.serenapascual.com/).
+
+<img src="res/landing.png" width="640px" alt="Site landing screenshot" />
 
 ## About
 ice-cream-social is dedicated to connecting creameries with hospitals to provide ice cream to chemo patients during their infusions.
